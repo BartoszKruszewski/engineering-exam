@@ -1,0 +1,76 @@
+## Kombinacje liniowe
+
+Kombinacja liniowa to wektor powstały przez sumowanie ustalonych wektorów pomnożonych przez skalary.
+
+$\vec{x} = a_1 * \vec{v_1} + ... + a_n * \vec{v_n}$
+
+Wektory te mogą pochodzić z jakiejś bazy.
+
+## Wektory zależne
+
+Wektor jest zależy wtw kiedy można wyrazić go kombinację liniową innych wektorów z danego układu.
+
+## Wyznaczniki macierzy
+
+Wyznacznik macierzy $A$ oznaczamy $|A|$ i oznacza on współczynik zmiany objętości obszaru na który działa przekształcenie liniowe (nasza macierz).
+
+W szczególności jeżeli wyznacznik jest równo $0$ to obszar ulega "zapadnięciu" (zeruje objętość obszaru). Mówiąć inaczej tracimy informacje o jakimś wymiarze.
+
+Wyznacznik ujemny oznacza zmianę objętności przy jednoczesnym "wywrócenie na drugą stronę" obszaru.
+
+Dla macierzy trójkątnych (zarówno górnych jak i dolnych) wyznacznik macierzy to iloczyn elementów na przekątnej.
+
+## Obraz, jądro, baza i rząd macierzy
+
+Obraz macierzy to zbiór wszystkich wyników mnożenia macierzy przez dowolne wektory.
+
+Jądro macierzy to zbiór wektorów, które przekształcone przez macierz dają wektor $\vec{0}$. Oznaczamy jako $ker(A)$.
+
+Rząd macierzy to liczba niezależnych kolumn w tej macierzy (wymiar obrazu macierzy). Oznaczamy to jako $r(A)$.
+
+Baza to zbiór niezależnych wektorów, które są wystarczające do rozpięcia danej przestrzeni.
+
+Ponadto $dim(ker(A)) + r(A) = dim(A)$
+
+## Wartości i wektory własne
+
+Macierz ma wektor własny $\vec{x}$ i odpowiadającą mu wartość własną $\lambda$ wtw:
+
+$A\vec{x} = \lambda \vec{x}$
+
+Intuicyjnie macierz $A$ zachowuje się jak skalar $\lambda$ dla wektora $\vec{x}$.
+
+$A\vec{x} = \lambda \vec{x} \iff |A - \lambda I|\vec{x} = 0 \iff |A - \lambda I| = 0$
+
+Czyli $\lambda$ jest wartością własną macierzy wtw $|A - \lambda I| = 0$
+
+## Wielomian charakterystyczny
+
+Jest to "spakowana" wersja wszystkich wartości własnych macierzy na raz w formie wielomianu.
+
+$p_A(\lambda) = |A - \lambda I|$
+
+## Krotności algebraiczne i geometryczne
+
+Krotność algebraiczna wartości własnej to liczba jej wystąpień jako rozwiązanie wielomianu charakterystycznego.
+
+Krotność geometryczna wartości własnej to liczba niezależnych wektorów własnych odpowiadających tej wartości własnej.
+
+## Macierz dodatnio określona
+
+Żeby sprawdzić czy macierz jest dodatnio określona można wykorzystać dowolony ze sposobów:
+- kryterium Sylvestera (wszystkie wyznaczniki kolejnych lewych górnych kwadratowych podmacierzy są dodatnie)
+- ma wszystkie wartości własne dodatnie
+
+## Czy układ równań ma rozwiązanie
+
+Niech układ równań ma postać $AX = B$
+
+Niech $U = [A|B]$
+
+Układ równań ma rozwiązanie wtw $r(A) = r(U)$.
+
+Jeśli:
+- $r(A) = r(U) = n$ ($n$ to liczba niewiadomych) to układ ma dokładnie jedno rozwiązanie
+- $r(A) = r(U) = x < n$ to układ ma nieskończenie wiele rozwiązań zależnych od $n - x$ parametrów
+- $r(A) < r(U)$ to układ jest sprzeczny
