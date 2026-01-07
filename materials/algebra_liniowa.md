@@ -6,9 +6,20 @@ $\vec{x} = a_1 * \vec{v_1} + ... + a_n * \vec{v_n}$
 
 Wektory te mogą pochodzić z jakiejś bazy.
 
+## Przeształcenie liniowe
+
+Funkcja jest przeształceniem liniowym jeżeli spełnia:
+- $F(\alpha \vec{v}) = \alpha F(\vec{v})$
+- $F(\vec{v} + \vec{w}) = F(\vec{v}) + F(\vec{w})$
+
 ## Wektory zależne
 
 Wektor jest zależy wtw kiedy można wyrazić go kombinację liniową innych wektorów z danego układu.
+
+Wektory są niezależne jeżeli spełniona jest implikacja:
+
+$\sum^{k}_{i=1}\alpha_i\vec{v}_i = 0 \implies a_1 = ... = a_k = 0$
+
 
 ## Wyznaczniki macierzy
 
@@ -31,6 +42,33 @@ Rząd macierzy to liczba niezależnych kolumn w tej macierzy (wymiar obrazu maci
 Baza to zbiór niezależnych wektorów, które są wystarczające do rozpięcia danej przestrzeni.
 
 Ponadto $dim(ker(A)) + r(A) = dim(A)$
+
+## Znajdowanie bazy jądra
+
+1. Eliminacja Gausa po wierszach
+2. Wyznaczenie wyrazów wolnych (tam gdzie nie ma schodka po eliminacji)
+3. Zapisanie wierszy macierzy w formie rownań
+4. Wyznaczanie zależności pomiędzy zmiennymi (mają być zależne od wyrazów wolnych)
+5. Wyznaczenie wektorów (każdy wektor odpowiada jedenej zmiennej wolnej, a jego współczyniki to współczyniki zależy w stosunku do innych zmiennych)
+
+## Znajdowanie bazy obrazu
+
+1. Eliminacja Gausa po kolumnach do postaci schodkowej.
+2. Bierzemy do bazy wszystkie wektory, które się nie zredukują do $\vec{0}$.
+
+## Macierz odwrotna
+
+Macierz odwrotna do jakiejś macierzy to taka która po przemnożeniu przez nią daje macierz indetycznościową.
+
+$M * M^{-1} = M^{-1} * M = I$
+
+Ponadto:
+
+- $(M^T)^{-1} = (M^{-1})^T$
+- $(M^{-1})^{-1} = M$
+- $(MN)^{-1} = N^{-1} M^{-1}$
+
+Macierz $n \times n$ jest odwracalna wtw jej rząd to $n$.
 
 ## Wartości i wektory własne
 
