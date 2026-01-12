@@ -31,6 +31,11 @@ Wyznacznik ujemny oznacza zmianę objętności przy jednoczesnym "wywrócenie na
 
 Dla macierzy trójkątnych (zarówno górnych jak i dolnych) wyznacznik macierzy to iloczyn elementów na przekątnej.
 
+Inne własności:
+- $|A * B| = |A| * |B|$
+- $|A| = |A^T|$
+- $|A^{-1}| = \frac{1}{|A|}$
+
 ## Obraz, jądro, baza i rząd macierzy
 
 Obraz macierzy to zbiór wszystkich wyników mnożenia macierzy przez dowolne wektory.
@@ -82,6 +87,10 @@ $A\vec{x} = \lambda \vec{x} \iff |A - \lambda I|\vec{x} = 0 \iff |A - \lambda I|
 
 Czyli $\lambda$ jest wartością własną macierzy wtw $|A - \lambda I| = 0$
 
+Istnieje powiązanie:
+
+$|A| = \Pi_{i=1}^{n} \lambda_i$
+
 ## Wielomian charakterystyczny
 
 Jest to "spakowana" wersja wszystkich wartości własnych macierzy na raz w formie wielomianu.
@@ -112,3 +121,21 @@ Jeśli:
 - $r(A) = r(U) = n$ ($n$ to liczba niewiadomych) to układ ma dokładnie jedno rozwiązanie
 - $r(A) = r(U) = x < n$ to układ ma nieskończenie wiele rozwiązań zależnych od $n - x$ parametrów
 - $r(A) < r(U)$ to układ jest sprzeczny
+
+## Macierze ortogonalne
+
+Macierz jest ortogonalna jeżeli $A^TA = I$
+
+Ponadto macierz jest ortogonalna wtw $A^T = A^{-1}$
+
+## Rozwinięcie Laplace
+
+Wybieramy jakiś i-ty wiersz (lub kolumnę), najlepiej taki który ma w sobie dużo $0$.
+
+$|A| = \sum_{j=1}^n a_{i,j} * (-1)^{i + j} * |A^{(i,j)}|$
+
+Gdzie $A^{(i,j)}$ to podmacierz $A$ z wykreślonymi i-tym wierszem i j-tą kolumną.
+
+Wzór można powtarzać rekurencyjnie.
+
+
