@@ -138,4 +138,33 @@ Gdzie $A^{(i,j)}$ to podmacierz $A$ z wykreślonymi i-tym wierszem i j-tą kolum
 
 Wzór można powtarzać rekurencyjnie.
 
+## Iloczyn skalarny
+
+Jakie właściwości musi spełniać przekształcenie $\tau$, żeby było przekształceniem skalarnym:
+1. Symetryczność $\tau(x, y) = \tau(y, x)$
+2. Addytywność $\tau(x + z, y) = \tau(x, y) + \tau(z, y)$
+3. Jednorodność $\tau(\alpha x, y) = \alpha * \tau(x, y)$
+4. Dodatnia określoność $\tau(x, x) > 0$ dla $x \neq 0$ oraz $\tau(x, x) = 0 \iff x = 0$
+
+## Baza ortogonalna
+
+To taka baza, gdzie wektory są do siebie prostopadłe, czyli ich iloczyn skalarny wynosi 0.
+
+## Ortogonalizacja Grama-Schmidta
+
+Jest to iteracyjna metoda zamiany bazy na bazę ortogonalną.
+
+Bierzemy po kolei wektory z bazy i dodajemy je do bazy ortoganlnej, w następujący sposób. Dla wektora $\vec{v}_i$ dodawanego do bazy jego wersja która można dodać do bazy ortogonalnej to $\vec{v}_i' = \vec{v}_i - \sum_{j=1}^{i-1} (\frac{\tau(\vec{v}_i, \vec{v}_j')}{\tau(\vec{v}_j', \vec{v}_j')} \vec{v}_j')$.
+
+Intuicja tego jest taka, że bierzemy wektor z bazy początkowej i dodajemy go do bazy ortogonalnej "zaprzyjaźniając" go z resztą wektorów, które już dodaliśmy do bazy.
+
+"Zaprzyjaźnienie" to odjęcie rzutowania $\vec{v}_i$ na przestrzeń rozpinaną przez wektory, które już są w bazie ortogonalnej. 
+
+## Normalizacja
+
+Norma wektora to jego długość względem jakiegoś iloczynu skalarnego $\tau$ to $||\vec{v}|| = \sqrt{\tau(\vec{v}, \vec{v})}$
+
+Możemy znormalizować wektor dzieląc go przez jego normę. Wtedy jego długość, względem danego iloczynu skalarnego będzie wynosiła $1$.
+
+Jeżeli wszystkie wektory z bazy ortogonalnej znormalizujemy, to otrzymamy bazę ortonormalną.
 
