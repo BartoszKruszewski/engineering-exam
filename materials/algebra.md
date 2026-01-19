@@ -20,7 +20,6 @@ Wektory są niezależne jeżeli spełniona jest implikacja:
 
 $\sum^{k}_{i=1}\alpha_i\vec{v}_i = 0 \implies a_1 = ... = a_k = 0$
 
-
 ## Wyznaczniki macierzy
 
 Wyznacznik macierzy $A$ oznaczamy $|A|$ i oznacza on współczynik zmiany objętości obszaru na który działa przekształcenie liniowe (nasza macierz).
@@ -119,7 +118,7 @@ Układ równań ma rozwiązanie wtw $r(A) = r(U)$.
 
 Jeśli:
 - $r(A) = r(U) = n$ ($n$ to liczba niewiadomych) to układ ma dokładnie jedno rozwiązanie
-- $r(A) = r(U) = x < n$ to układ ma nieskończenie wiele rozwiązań zależnych od $n - x$ parametrów
+- $r(A) = r(U) = x < n$ to układ ma nieskończenie wiele rozwiązań zależnych od $n - x$ parametrów (jeżeli rozwiązujemy je w ciele skończonym to wtedy liczba rozwiązań to liczba elementów ciała podniesiona do potęgi równej liczbie parametrów).
 - $r(A) < r(U)$ to układ jest sprzeczny
 
 ## Macierze ortogonalne
@@ -167,4 +166,3 @@ Norma wektora to jego długość względem jakiegoś iloczynu skalarnego $\tau$ 
 Możemy znormalizować wektor dzieląc go przez jego normę. Wtedy jego długość, względem danego iloczynu skalarnego będzie wynosiła $1$.
 
 Jeżeli wszystkie wektory z bazy ortogonalnej znormalizujemy, to otrzymamy bazę ortonormalną.
-
