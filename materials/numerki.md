@@ -19,19 +19,6 @@ Pokazuje to jak błąd względy danych wejściowych wpływa na bląd względny w
 
 Jeżeli zadanie ma wiele parametrów wejściowych, należy sprawdzić każdy z nich osobno, trafktując pozostałe paramtery jako stałe podczas obliczania pochodnych.
 
-## Zadanie dobrze zdefiniowane
-
-Zadanie jest dobrze zdefiniowane w sensie Hadamarda jeżeli:
-1. Istnienie rozwiązania: Dla dowolnych dopuszczalnych danych wejściowych istnieje rozwiązanie zadania
-2. Jednoznaczność rozwiązania: Rozwiązanie to jest unikalne (istnieje dokładnie jedno).
-3. Ciągła zależność od danych: Rozwiązanie zależy w sposób ciągły od danych wejściowych (stabilność). Oznacza to, że małe zmiany w danych początkowych (lub parametrach) prowadzą do proporcjonalnie małych zmian w wyniku, bez gwałtownych skoków.
-
-Żeby sprawdzić warunek 3. sprawdzamy czy istnieje stała Lipschitza:
-
-$| \phi(d_1) - \phi(d_2) | \le L * | d_1 - d_2 | $
-
-Czyli czy da się ograniczyć skończoną liczbą róźnice na danych wyjściowych.
-
 ## Utrata cyfr znaczących
 
 Podczas odejmowania dwóch bardzo bliskich sobie liczb (różniących się od siebie o $\epsilon$) ich cyfry znaczące zredukują się i zostanie sam $\epsilon$, który może być poza zakresem dokładności, co spowoduje, że taka różnica będzie równa $0$.
@@ -50,3 +37,26 @@ $sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots$
 
 $cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots$
 
+## Wielomiany Czebyszewa
+
+$T_0(x) = 1$
+
+$T_1(x) = x$
+
+$T_k(x) = 2x * T_{k-1}(x) - T_{k-2}(x)$
+
+Własności:
+
+$T_{m * n}(x) = T_m(T_n(x))$
+
+## Aproksymacja średniokwadratowa
+
+Polega na znalezieniu funkcji która możliwie nalepiej odwzorowuje poczynione obserwacje, poprzez wyznaczenie funkcji błędu zależnej od ustalanego parametru i obliczeniu minimum takiej funkcji.
+
+Niech $C(t)$ to szukany model z parametrem $A$ , a $(t_k, C_k)$ to obserwacje:
+
+$S(A) = \sum_{k=0}^{n}(C_k - C(t_k))^2$
+
+Musimy obliczyć dla jakiego $A$ zachodzi $S'(A) = 0$
+
+Parametrów może być więcej, wtedy obliczamy analogicznie, ale zerując pochodne cząstkowe po każdym parametrze.
