@@ -60,3 +60,46 @@ $S(A) = \sum_{k=0}^{n}(C_k - C(t_k))^2$
 Musimy obliczyć dla jakiego $A$ zachodzi $S'(A) = 0$
 
 Parametrów może być więcej, wtedy obliczamy analogicznie, ale zerując pochodne cząstkowe po każdym parametrze.
+
+## NIFS 3
+
+To funkcja przybliżająca jakąś inną funkcje za pomocą sklejonych ze sobą (w węzłach) wielomianów 3 stopnia.
+
+Węzły to wyznaczone punkty dla których wartości NIFS3 oraz przybliżanej funkcji są identyczne.
+
+Muszą spełniać warunki:
+- przedziałami (pomiędzy węzłami) jest wielomianem co najwyżej 3 stopnia
+- $s(x_k) = y_k$ (odpowiada wartościom w węzłach)
+- $s, s', s''$ są ciągłe
+- $s''(a) = s''(b) = 0$ (globalne końce przedziałów mają zerową drugą pochodną)
+
+## Rozkład LU i metoda faktoryzacji
+
+Metoda faktoryzacji polega na rozbiciu macierzy na LU (Lower i Upper) czyli iloczyn macierzy dolnotrójkątnej z jedynami na przekątnej oraz górnotrójkątnej.
+
+Odbywa się to poprzez stworzenie macierzy $Id * A$ i robienie jednocześnie eliminacji Gaussa obu macierzach, nie zmieniając kolejności wierszy, co ostatecznie prowadzi do uzyskania rozkładu LU.
+
+Taki rozkład można wykorzystach do rozwiązania w czasie $O(n^2)$ układu równań liniowych $A\vec{x}=\vec{b}$. Przy czym należy pamiętać, że sama faktoryzacji pozwalająca uzyskać rozkład LU ma złożonośc $O(n^3)$.
+
+Trik wygląda następująco:
+
+$A\vec{x}=\vec{b}$
+
+$LU\vec{x}=\vec{b}$
+
+Podstawiamy:
+
+$\vec{y} = U\vec{x}$
+
+$L\vec{y} = \vec{b}$ (Podstawienie "w przód", rozwiązujemy to i dostajemy $\vec{y}$)
+
+$\vec{y} = U\vec{x}$ (Teraz podstawiamy "w tył" otrzymany $\vec{y}$ i obliczamy $\vec{x}$)
+
+Czyli zamiast rozwiązywać jednen trudny układ równań $O(n^3)$ rozwiązujemy dwa układy trójkątne, czyli proste w $O(n^2)$. 
+
+## Złożony wzór trapezów
+
+## Przybliżanie rozwiązania układu równań nieliniowych
+
+## Metoda bisekcji
+
